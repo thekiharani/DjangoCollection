@@ -8,5 +8,5 @@ router.register('paradigms', views.ParadigmView)
 router.register('programmers', views.ProgrammerView)
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
 ]
