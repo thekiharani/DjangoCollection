@@ -15,29 +15,37 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+# 
 # Application definition
 
 INSTALLED_APPS = [
+# default
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Third party
     'rest_framework',
+    'corsheaders',
+    # local
     'languages',
     'soccer',
+    'mnrelations',
+    'cart',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'restApi.urls'
@@ -115,3 +123,8 @@ STATIC_URL = '/static/'
 #     'DEFAULT_PERMISSION_CLASSES':  ('rest_framework.permissions.IsAuthenticated',),
 #     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',)
 # }
+
+CORS_ORIGIN_WHITELIST = [
+    "http://127.0.0.1:3000",
+    "http://localhost:3000"
+]
