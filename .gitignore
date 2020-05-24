@@ -5,6 +5,7 @@
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
-.venv/*
+.venv/bin
+.venv/lib
 restApi/.idea/vcs.xml
 restApi/soccer/
